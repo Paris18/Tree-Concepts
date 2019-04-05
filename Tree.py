@@ -65,7 +65,7 @@ def postorder(root):
         postorder(root.right)
         print(root.key,end=" ")
 
-
+''' Right View of Tree'''
 def rightview(root,current_node,max_mode):
     temp_max_node = max_mode
     if(root != None):
@@ -77,7 +77,7 @@ def rightview(root,current_node,max_mode):
         temp_max_node = rightview(root.left,current_node+1,temp_max_node)
     return temp_max_node
 
-
+''' Left View of Tree'''
 def leftview(root,current_node,max_mode):
     temp_max_node = max_mode
     # print(root.key)
@@ -90,6 +90,7 @@ def leftview(root,current_node,max_mode):
         temp_max_node = leftview(root.right,current_node+1,temp_max_node)
     return temp_max_node
 
+''' Top View of Tree'''
 def topview(root):
     if(root != None):
         print(root.key,end=" ")
@@ -102,7 +103,6 @@ def topview(root):
         while (right_temp != None):
             print (right_temp.key,end=" ")
             right_temp = right_temp.right
-
     return 1
 
 
@@ -134,13 +134,11 @@ print("Inorder traversal Before Insert : ",end=" ")
 Inorder(root)
 
 insert(root,7)
-
 print()
 print("Inorder traversal After Insert : ",end=" ")
 Inorder(root)
 
 delete(root,7)
-
 print()
 print("Inorder traversal after Delete : ",end=" ")
 Inorder(root)
